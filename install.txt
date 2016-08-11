@@ -1,0 +1,15 @@
+
+安装：
+String str = "/CanavaCancel.apk";
+String fileName = Environment.getExternalStorageDirectory() + str;
+Intent intent = new Intent(Intent.ACTION_VIEW);
+intent.setDataAndType(Uri.fromFile(new File(fileName)), "application/vnd.android.package-archive");
+startActivity(intent);
+
+卸载：
+Uri packageURI = Uri.parse("package:com.demo.CanavaCancel");   
+Intent uninstallIntent = new Intent(Intent.ACTION_DELETE, packageURI);   
+startActivity(uninstallIntent);
+
+Environment拥有一些可以获取环境变量的方法 
+package:com.demo.CanavaCancel 这个形式是 package:程序完整的路径 (包名+程序名).
